@@ -1,7 +1,19 @@
-export default function Progress() {
+export default function Progress({
+  index,
+  numQuestions,
+  points,
+  maxPossiblePoints,
+  answer,
+}) {
   return (
     <header className="progress">
-      <p>Que</p>
+      <progress max={numQuestions} value={index + Number(answer !== null)} />
+      <p>
+        Quetion <strong>{index}</strong>/ {numQuestions}
+      </p>
+      <p>
+        <strong>{points}</strong> / {maxPossiblePoints}
+      </p>
     </header>
   );
 }
